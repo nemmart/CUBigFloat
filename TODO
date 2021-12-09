@@ -1,0 +1,20 @@
+Things to fix / improve:
+1)  Remove algorithms that aren't used
+    -  bit_or and bit_and
+    -  some carry resolution routines
+2)  Rethink the "context" object.  It's really a carry out object.
+3)  Implement a faster "greater than" comparison
+4)  Improve shifts:
+    -  implement a fast circular shift, then zero out the left or right
+    -  maybe it's faster to __shfl by one more and then word shift in the opposite direction
+    -  use fast division
+    -  use funnel shift if it's available
+5)  Implement the Maxwell multiplier for THREAD_PRODUCT_N
+6)  Fast spread increment and decrement, requires fewer ballots
+7)  Should rounding more be a template parameter?
+8)  Organize the code a little better.  There are three categories of routines:
+      int routines that work on 32 bit values (SQRT32, SQRT64, DIV32, APPROX32, etc)
+      spread primitives (add, propagate, shift, clear, compare)
+      spread computations (SQRT_N, DIV_N, WARP_PRODUCT_N, THREAD_PRODUCT_N, etc)
+
+
