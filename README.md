@@ -16,7 +16,7 @@ Requirements:
 * Install MPFR
 
 ```
-/usr/local/cuda/bin/nvcc -DGPU -arch=sm_70 
+/usr/local/cuda/bin/nvcc -DGPU -arch=sm_70 fpa_test.c tests.c fpa.cu -lgmp -lmpfr -o test
 ./test
 ```
 
